@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  vars_files:
+    - settings.yml
+    - /home/seed/cloudbox/settings.yml
+  roles:
+    - { role: myrole, tags: ['myrole'] }
