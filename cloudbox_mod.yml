@@ -5,3 +5,4 @@
     - /home/seed/cloudbox/settings.yml
   roles:
     - { role: myrole, tags: ['myrole'] }
+    - { role: organizr2, tags: ['organizr2'] }
