@@ -3,6 +3,6 @@
   vars_files:
     - settings.yml
     - /home/seed/cloudbox/settings.yml
+    - /home/seed/cloudbox/adv_settings.yml
   roles:
     - { role: myrole, tags: ['myrole'] }
-    - { role: organizr2, tags: ['organizr2'] }
