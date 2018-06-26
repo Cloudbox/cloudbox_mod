@@ -6,7 +6,7 @@ Blank Template to add custom Ansible roles.
 1. Clone this repo:
 
     ```bash
-    git clone https://github.com/Cloudbox/cloudbox_mod.git ~/cloudbox_mod
+    git clone https://github.com/cloudbox/cloudbox_mod.git ~/cloudbox_mod
     ```
 
 1. CD into the `cloudbox_mod` folder:
@@ -53,4 +53,43 @@ Blank Template to add custom Ansible roles.
 
     ```bash
     sudo ansible-playbook cloudbox_mod.yml --tags myrole
+    ```
+
+
+## How to mod a Cloudbox role
+
+1. Copy the Ansible role you want to modify from `~/cloudbox/roles` to `~/cloudbox_mod/roles`.
+
+   For example:
+   ```
+   cp -r ~/cloudbox/roles/sonarr ~/cloudbox_mod/roles/
+   ```
+
+1. Add Ansible role into cloudbox_mod.yml.
+
+    ```bash
+    nano ~/cloudbox_mod/cloudbox_mod.yml
+    ```
+
+    ```yaml
+    ---
+    - hosts: localhost
+      vars_files:
+        - settings.yml
+        - /home/seed/cloudbox/settings.yml
+      roles:
+        - { role: sonarr, tags: ['sonarr'] }
+    ```
+
+
+1. Make edits to the Ansible role. 
+
+   ```
+   nano ~/cloudbox_mod/roles/sonarr/tasks/main.yml
+   ```
+
+1. Run the newly modded Ansible role:
+
+    ```bash
+    sudo ansible-playbook cloudbox_mod.yml --tags sonarr
     ```
