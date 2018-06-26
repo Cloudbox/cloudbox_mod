@@ -60,8 +60,7 @@ Blank Template to add custom Ansible roles.
 
 1. Copy the Ansible role you want to modify from `~/cloudbox/roles` to `~/cloudbox_mod/roles`.
 
-   For example:
-   ```
+   ```bash
    cp -r ~/cloudbox/roles/sonarr ~/cloudbox_mod/roles/
    ```
 
@@ -84,7 +83,7 @@ Blank Template to add custom Ansible roles.
 
 1. Make edits to the Ansible role. 
 
-   ```
+   ```bash
    nano ~/cloudbox_mod/roles/sonarr/tasks/main.yml
    ```
 
