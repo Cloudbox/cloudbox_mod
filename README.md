@@ -1,4 +1,4 @@
-# cloudbox_mod
+# Cloudbox Mod
 Blank Template to add custom Ansible roles.
 
 ## How to use this template
