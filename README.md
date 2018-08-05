@@ -1,4 +1,6 @@
 # Cloudbox Mod
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCloudbox%2Fcloudbox_mod.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FCloudbox%2Fcloudbox_mod?ref=badge_shield)
+
 Blank Template to add custom Ansible roles.
 
 ## How to use this template
@@ -92,3 +94,7 @@ Blank Template to add custom Ansible roles.
     ```bash
     sudo ansible-playbook cloudbox_mod.yml --tags sonarr
     ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCloudbox%2Fcloudbox_mod.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FCloudbox%2Fcloudbox_mod?ref=badge_large)
