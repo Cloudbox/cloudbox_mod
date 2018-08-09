@@ -1,5 +1,5 @@
 # cloudbox_mod
-Blank Template to add custom Ansible roles.
+Blank Template to add custom Ansible roles to Cloudbox.
 
 ## How to use this template
 
@@ -27,27 +27,67 @@ Blank Template to add custom Ansible roles.
     touch ~/cloudbox_mod/roles/myrole/tasks/main.yml
     ```
 
-1. Add custom variables into settings:
+1. Add custom variables into `settings.yml`:
 
     ```
     ~/cloudbox_mod/settings.yml
     ```
 
+1. If you have a Ansible vault password file, add the location to `ansible.cfg`:
+
+    To edit:
+
+    ```bash
+    nano ~/cloudbox_mod/ansible.cfg
+    ```
+
+    Add line (with path to your vault password file):
+    ```ini
+    vault_password_file = ~/.ansible_vault
+    ```
+
+    Final result:
+    ```ini
+    [defaults]
+    inventory = inventories/local
+    callback_whitelist = profile_tasks
+    command_warnings = False
+    retry_files_enabled = False
+    hash_behaviour = merge
+    role_path = ~/cloudbox/roles
+    vault_password_file = ~/.ansible_vault
+    ```
+
 1. Add the Ansible role to `cloudbox_mod.yml`:
+
+    To edit:
 
     ```bash
     nano ~/cloudbox_mod/cloudbox_mod.yml
     ```
 
+    Add line:
+    ```yaml
+      roles:
+        - { role: myrole, tags: ['myrole'] }
+    ```
+
+    Final result:
     ```yaml
     ---
     - hosts: localhost
       vars_files:
         - settings.yml
-        - /home/seed/cloudbox/settings.yml
+        - ['~/cloudbox/accounts.yml', '~/cloudbox/accounts.yml.default']
+        - ['~/cloudbox/settings.yml', '~/cloudbox/settings.yml.default']
+        - ['~/cloudbox/adv_settings.yml', '~/cloudbox/adv_settings.yml.default']
       roles:
+        - { role: pre_tasks }
+        - { role: user }
         - { role: myrole, tags: ['myrole'] }
     ```
+
+    Note: The roles `pre_tasks` and `user` are required and should not be removed.
 
 1. Run the Ansible role:
 
