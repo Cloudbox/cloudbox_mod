@@ -6,6 +6,4 @@
 
 !inventories
 !inventories/**
-!user
-!user/**
 !.gitignore
