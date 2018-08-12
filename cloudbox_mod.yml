@@ -7,5 +7,4 @@
     - ['~/cloudbox/adv_settings.yml', '~/cloudbox/adv_settings.yml.default']
   roles:
     - { role: pre_tasks }
-    - { role: user }
     - { role: myrole, tags: ['myrole'] }

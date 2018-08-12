@@ -8,7 +8,7 @@
   register: gid
 
 - debug:
-    msg: "Your UID:GID is {{ uid.stdout }}:{{ gid.stdout }}."
+    msg: "Your UID is {{ uid.stdout }}. Your GID is {{ gid.stdout }}."
 
 - debug:
     msg: "Your favorite color is {{ favorite_color }}!"
