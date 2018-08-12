@@ -67,9 +67,8 @@ Blank Template to add custom Ansible roles to Cloudbox.
     nano ~/cloudbox_mod/cloudbox_mod.yml
     ```
 
-    Add line:
+    Add the following line under `roles:`:
     ```yaml
-      roles:
         - { role: newrole, tags: ['newrole'] }
     ```
 
