@@ -15,7 +15,7 @@ Blank Template to add custom Ansible roles to Cloudbox.
     cd ~/cloudbox_mod
     ```
 
-1. If you have a Ansible vault password file, add the location to `ansible.cfg`:
+1. If you have an Ansible vault password file, add the location to `ansible.cfg`:
 
     To edit:
 
